@@ -1,4 +1,4 @@
-# node-fastcgi-client
+# node-fpm
 
 Help node.js code visit PHP, and manage PHP workers like Fast PHP Manager (PHP FPM). Use PHP-CGI directly through FastCGI protocol.
 
@@ -14,7 +14,7 @@ Developing. Would be stable soon.
 
 * `portMin` The min value of port used by PHP-CGI, default to 9001.
 * `portMax` The max value of port used by PHP-CGI, default to 9099.
-* `maxWorkers` The PHP-CGI workers to start, range 1 to max available ports, default to 4.
+* `workers` The PHP-CGI workers to start, range 1 to max available ports, default to 4.
 * `maxReqsPerWorker` The maximum requests to a worker before it is restarted, range 1 to 65535, default to 500.
 
 `fpmService.request(params, cb)` Create a new request.
