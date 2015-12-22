@@ -13,7 +13,7 @@ describe('FPM Service', function(){
 	});
 
 	var connectOptions = {
-		maxReqsPerWorker: 1000
+		maxReqsPerWorker: 100
 	};
 
 	it('Execute PHP helloworld', function(done){
@@ -34,4 +34,15 @@ describe('FPM Service', function(){
 		this.timeout(10000);
 		requests.helloworldBatchSeries(100, fpmService, done);
 	});
+
+	it('Execute PHP helloworld * 500', function(done){
+		this.timeout(10000);
+		requests.helloworldBatch(500, fpmService, done);
+	});
+
+	it('Execute PHP helloworld * 500 (With Delay)', function(done){
+		this.timeout(10000);
+		requests.helloworldBatchWithDelay(500, 1, fpmService, done);
+	});
+
 });
